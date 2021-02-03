@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PWPB</title>
+    <title>Aldo Fakhry</title>
     <link rel="stylesheet" type="text/css" href="assets/aldo.css">
 </head>
 <body>
