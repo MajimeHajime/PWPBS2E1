@@ -9,16 +9,7 @@
     <h2>Data yang ada</h2>
     <table border="1">
         <thread>
-            <tr
-
-                <th scope="col">#</th>
-<<<<<<< Updated upstream
-                <th scope="col">Nis</th>
-                <th scope="col">Nama Lengkap</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Kelas</th>
-                <th scope="col">Jurusan</th>
-=======
+            <tr>
                 <th scope="col"> No.
                 </th>
                 <th scope="col">Nis
@@ -41,7 +32,6 @@
                   <a href="index.php?sort=jurusan&order=ASC"><br>a</a>
                   <a href="index.php?sort=jurusan&order=DESC">d</a>
                 </th>
->>>>>>> Stashed changes
             </tr>
         </thread>
         <tbody>
