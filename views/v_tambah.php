@@ -9,7 +9,7 @@
         $action = 'tambah.php';
         if (!empty($siswa)) $action = 'edit.php'
     ?>
-    <form method="POST" action="<?= $action ?>">
+    <form method="POST" enctype="multipart/form-data" action="<?= $action ?>">
         <div>
             <div >
                 <span>Nis</span>
@@ -57,6 +57,11 @@
                 <span>Jurusan</span>
             </div>
                 <input type="text" placeholder="Masukkan Jurusan anda" name="jurusan" value="<?= @$siswa['jurusan']; ?>" required>
+        </div>
+        <div class="">
+            <img src="<?= base_url();  ?>/assets/images/<?= @$siswa['foto'];?>" alt="">
+            <input type="hidden" name="foto" value="<?= @$siswa['foto']; ?>">
+            <input type="file" name="foto">
         </div>
 
         <button type="submit" value="Simpan">Simpan</button>
