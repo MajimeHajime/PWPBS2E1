@@ -5,8 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nis = $_POST['nis'];
     $nama_lengkap = $_POST['nama_lengkap'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $kelas = $_POST['kelas'];
-    $jurusan = $_POST['jurusan'];
+    $kelas = $_POST['id_kelas'];
     $foto = $_FILES['foto'];
 
     if (!empty($foto) and $foto['error'] == 0) {
@@ -20,11 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $file = $foto['name'];
     }
 
-    $sql = "INSERT INTO siswa (nis,nama_lengkap,jenis_kelamin,kelas,jurusan,file) VALUES ('$nis','$nama_lengkap','$jenis_kelamin','$kelas','$jurusan', '$file')";
+    $sql = "INSERT INTO siswa (nis,nama_lengkap,jenis_kelamin,kelas,file) VALUES ('$nis','$nama_lengkap','$jenis_kelamin','$kelas', '$file')";
 
     $mysqli->query($sql) or die($mysqli->error);
 
     header("location:index.php");
 }
+
+$sql = "SELECT * FROM kelas";
+$dataKelas = $mysqli->query($sql) or die($mysqli->error);
 
 include 'views/v_tambah.php';
