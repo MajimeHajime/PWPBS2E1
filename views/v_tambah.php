@@ -9,6 +9,19 @@
         $action = 'tambah.php';
         if (!empty($siswa)) $action = 'edit.php'
     ?>
+
+    <?php if(!empty($success)) { ?>
+        <div class="alert alert-success">
+            <p><?= $success ?></p>
+        </div>
+    <?php } ?>
+    
+    <?php if(!empty($error)) { ?>
+        <div class="alert alert-danger">
+            <p><?= $error ?></p>
+        </div>
+    <?php } ?>
+
     <form method="POST" enctype="multipart/form-data" action="<?= $action ?>">
         <div>
             <div >
@@ -44,12 +57,6 @@
                     <?php } ?>
                 </option>
             </select>
-        </div>
-        <div>
-            <div>
-                <span>Jurusan</span>
-            </div>
-                <input type="text" placeholder="Masukkan Jurusan anda" name="jurusan" value="<?= @$siswa['jurusan']; ?>" required>
         </div>
         <div class="">
             <img src="<?= base_url();  ?>/assets/images/<?= @$siswa['foto'];?>" alt="">
